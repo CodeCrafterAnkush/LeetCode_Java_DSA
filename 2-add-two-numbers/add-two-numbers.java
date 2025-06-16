@@ -40,7 +40,7 @@ class Solution {
                 carry = 0;
             }
         }
-        if (l1 == null && l2 == null && carry != 0) {
+        if ( carry != 0) {
             ListNode carryNode = new ListNode();
             carryNode.val = carry;
             head.next = carryNode;

@@ -18,23 +18,23 @@ class Solution {
             head.next = null;
             return head;
         }
-        int count =0;
+        int size =0;
         ListNode temp = head;
         while(temp!=null){
             temp=temp.next;
-            count++;
+            size++;
         }
 
-        if((count-n) == 0){
+        if((size-n) == 0){
             head = head.next;
             return head;
         }
         ListNode currNode = head;
         ListNode prevNode = null;
         int nodeNth = 0;
-        while(nodeNth <= (count-n)){
+        while(nodeNth <= (size-n)){
 
-            if(nodeNth ==(count-n) && prevNode != null){
+            if(nodeNth ==(size-n) && prevNode != null){
                 if(prevNode.next.next != null){
                     prevNode.next = prevNode.next.next;
                 }else{

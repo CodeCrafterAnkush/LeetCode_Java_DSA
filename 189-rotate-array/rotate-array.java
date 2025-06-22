@@ -10,14 +10,7 @@ class Solution {
         }
         return;
     }
-    public void rotate(int[] nums, int k) {
-        // if(nums.length == 1 || nums.length < k) return;
-        // int length = nums.length;
-        // reverseArray(nums,(length-k), length-1);
-        // reverseArray(nums,0,(length-k)-1);
-        // reverseArray(nums,0, nums.length-1);
-        // return;
-         
+    public void rotate(int[] nums, int k) {         
         int length = nums.length;
         int placeMove = k % length;
         System.out.println(placeMove);

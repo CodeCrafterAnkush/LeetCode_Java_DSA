@@ -11,24 +11,15 @@ class Solution {
                 str = new StringBuilder();
             }
             if(i==s.length()-1 && str.length() < k && str.length() > 0){
-                // while(str.length()<k){
-                //     str+=fill;
-                // }
+                while(str.length()<k){
+                    str.append(fill);
+                }
                 
                 stringList.add(str.toString());
             }
             i++;
-        }
+        }        
 
-        String [] stringArray = stringList.toArray(new String[0]);
-        String lastStr =stringArray[stringArray.length-1];
-         if(lastStr.length()<k){
-            while(lastStr.length()<k){
-                lastStr += fill;
-            }
-            stringArray[stringArray.length-1]=lastStr;
-         }
-
-         return stringArray;
+         return stringList.toArray(new String[0]);
     }
 }

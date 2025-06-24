@@ -2,19 +2,20 @@ class Solution {
     public String[] divideString(String s, int k, char fill) {
         List<String> stringList = new ArrayList<>();
         int i=0;
-        String str = "";
+        StringBuilder str = new StringBuilder();
         while(i<s.length()){
-            str += s.charAt(i);
+            // str += s.charAt(i);
+            str.append(s.charAt(i));
             if(str.length() == k){
-                stringList.add(str);
-                str ="";
+                stringList.add(str.toString());
+                str = new StringBuilder();
             }
-            if(i==s.length()-1 && str.length() < k && str != ""){
+            if(i==s.length()-1 && str.length() < k && str.length() > 0){
                 // while(str.length()<k){
                 //     str+=fill;
                 // }
                 
-                stringList.add(str);
+                stringList.add(str.toString());
             }
             i++;
         }

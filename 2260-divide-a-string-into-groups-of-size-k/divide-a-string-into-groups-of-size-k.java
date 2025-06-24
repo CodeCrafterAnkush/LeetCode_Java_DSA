@@ -10,24 +10,24 @@ class Solution {
                 str ="";
             }
             if(i==s.length()-1 && str.length() < k && str != ""){
-                while(str.length()<k){
-                    str+=fill;
-                }
+                // while(str.length()<k){
+                //     str+=fill;
+                // }
                 
                 stringList.add(str);
             }
             i++;
         }
 
-        // String [] stringArray = stringList.toArray(new String[0]);
-        // String lastStr =stringArray[stringArray.length-1];
-        //  if(lastStr.length()<k){
-        //     while(lastStr.length()<= k){
-        //         lastStr += fill;
-        //     }
-        //     stringArray[stringArray.length-1]=lastStr;
-        //  }
+        String [] stringArray = stringList.toArray(new String[0]);
+        String lastStr =stringArray[stringArray.length-1];
+         if(lastStr.length()<k){
+            while(lastStr.length()<k){
+                lastStr += fill;
+            }
+            stringArray[stringArray.length-1]=lastStr;
+         }
 
-         return stringList.toArray(new String[0]);
+         return stringArray;
     }
 }

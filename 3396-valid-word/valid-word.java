@@ -32,9 +32,7 @@ class Solution {
 
     public boolean isValid(String word) {
         if(word.length()<3)return false;
-        if(!isVowel(word)) return false;
-        if(!containsConsonant(word))return false;
         if(containsSymbol(word))return false;
-        return true;
+        return containsConsonant(word) && isVowel(word);
     }
 }

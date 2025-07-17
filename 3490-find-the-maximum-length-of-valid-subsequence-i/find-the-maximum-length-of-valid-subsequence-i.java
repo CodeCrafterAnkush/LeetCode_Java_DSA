@@ -1,8 +1,4 @@
 class Solution {
-    public boolean isEven(int num){
-        if(num%2==0) return true;
-        return false;
-    }
     public int maximumLength(int[] nums) {
         int oddCount =0;
         int evenCount =0;

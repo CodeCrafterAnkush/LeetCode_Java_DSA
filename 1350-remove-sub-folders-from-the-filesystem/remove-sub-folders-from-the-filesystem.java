@@ -19,10 +19,10 @@ class Solution {
             
 
         }
-        List<String> ansList = new ArrayList<>();
-        for(String str : stack){
-            ansList.add(str);
-        }
-        return ansList;
+        // List<String> ansList = new ArrayList<>();
+        // for(String str : stack){
+        //     ansList.add(str);
+        // }
+        return new ArrayList<>(stack);
     }
 }

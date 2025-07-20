@@ -8,13 +8,13 @@ class Solution {
         //     // i++;
         // }
 
-        int place =n*n;
-        for(int i=0;i<=place;i++){
-            if(i*w > maxWeight){
-                return i-1;
-            }
-        }
+        // int place =n*n;
+        // for(int i=0;i<=place;i++){
+        //     if(i*w > maxWeight){
+        //         return i-1;
+        //     }
+        // }
 
-        return place;
+        return Math.min(n * n, maxWeight / w);
     }
 }

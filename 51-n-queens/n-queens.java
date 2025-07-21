@@ -1,4 +1,10 @@
 class Solution {
+    private int n;
+    private int[] leftCheck;
+    private int[] upperLeftCheck;
+    private int[] lowerLeftCheck;
+    private List<List<String>> ansList;
+
     // Approach-1
 
     // public boolean isSafe(int row, int col, char[][] board, int n) {
@@ -35,7 +41,7 @@ class Solution {
     //     return true;
     // }
 
-    public void placeQueens(int col, char[][] board, List<List<String>> ansList, int n, int [] leftCheck, int [] upperLeftCheck,int [] lowerLeftCheck) {
+    public void placeQueens(int col, char[][] board, int n) {
         if (col == n) {
             List<String> list = new ArrayList<>();
             for (int i = 0; i < n; i++) {
@@ -55,33 +61,34 @@ class Solution {
             //     board[row][col] = '.';
             // }
 
-            
             //Approach-2
-            if (leftCheck[row]==0 && upperLeftCheck[row+col]==0 && lowerLeftCheck[(n-1)+(col-row)]==0) {
+            if (leftCheck[row] == 0 && upperLeftCheck[row + col] == 0 && lowerLeftCheck[(n - 1) + (col - row)] == 0) {
                 board[row][col] = 'Q';
-                leftCheck[row]=1;
-                upperLeftCheck[row+col]=1;
-                lowerLeftCheck[(n-1)+(col-row)]=1;
-                placeQueens(col + 1, board, ansList,n,leftCheck,upperLeftCheck,lowerLeftCheck);
+                leftCheck[row] = 1;
+                upperLeftCheck[row + col] = 1;
+                lowerLeftCheck[(n - 1) + (col - row)] = 1;
+                placeQueens(col + 1, board, n);
                 board[row][col] = '.';
-                leftCheck[row]=0;
-                upperLeftCheck[row+col]=0;
-                lowerLeftCheck[(n-1)+(col-row)]=0;
+                leftCheck[row] = 0;
+                upperLeftCheck[row + col] = 0;
+                lowerLeftCheck[(n - 1) + (col - row)] = 0;
             }
         }
 
     }
 
     public List<List<String>> solveNQueens(int n) {
-        char[][] board = new char[n][n];
-        int [] leftCheck = new int[n];
-        int [] upperLeftCheck = new int[(2*n)-1];
-        int [] lowerLeftCheck = new int[(2*n)-1];
-        List<List<String>> ansList = new ArrayList<>();
+        this.n = n;
+        this.leftCheck = new int[n];
+        this.upperLeftCheck = new int[(2 * n) - 1];
+        this.lowerLeftCheck = new int[(2 * n) - 1];
+        this.ansList = new ArrayList<>();
+
+        char[][] board = new char[n][n];        
         for (int i = 0; i < n; i++) {
             Arrays.fill(board[i], '.');
         }
-        placeQueens(0, board, ansList, n,leftCheck,upperLeftCheck,lowerLeftCheck);
+        placeQueens(0, board, n);
         return ansList;
     }
 }

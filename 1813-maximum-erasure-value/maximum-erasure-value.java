@@ -4,7 +4,7 @@ class Solution {
         int right = 0;
         int subArrSum = 0;
         int maxSum = 0;
-        int arr[] = new int[100001];
+        int arr[] = new int[10001];
         while(left<nums.length && right<nums.length){
             if(arr[nums[right]]==1){
                 while (nums[left] != nums[right]) {

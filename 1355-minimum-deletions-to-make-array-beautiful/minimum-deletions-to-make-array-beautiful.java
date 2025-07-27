@@ -9,6 +9,6 @@ class Solution {
         }
       }
      
-      return (nums.length-minDeletions) % 2 != 0?++minDeletions:minDeletions;  
+      return (nums.length-minDeletions) % 2 == 1?++minDeletions:minDeletions;  
     }
 }

@@ -8,9 +8,7 @@ class Solution {
             }
         }
       }
-      if((nums.length-minDeletions) % 2 != 0){
-        minDeletions++;
-      }
-      return minDeletions;  
+     
+      return (nums.length-minDeletions) % 2 != 0?++minDeletions:minDeletions;  
     }
 }

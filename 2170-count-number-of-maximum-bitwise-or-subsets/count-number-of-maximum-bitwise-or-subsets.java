@@ -11,8 +11,11 @@ class Solution {
     }
     public int countMaxOrSubsets(int[] nums) {
         int maxOr = 0;
-        for(int i : nums){
-            maxOr = maxOr|i;
+        // for(int i : nums){
+        //     maxOr = maxOr|i;
+        // }
+        for(int i=0;i<nums.length;i++){
+            maxOr = maxOr|nums[i];
         }
 
         return countOr(nums,0,maxOr,0);

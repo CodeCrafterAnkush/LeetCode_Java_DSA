@@ -7,6 +7,6 @@ class Solution {
             if(colors.charAt(i)=='B' && colors.charAt(i)==colors.charAt(i-1)&& colors.charAt(i)==colors.charAt(i+1))turnB++;
         }
 
-        return turnA>turnB;
+        return (turnA>turnB)?true:false;
     }
 }

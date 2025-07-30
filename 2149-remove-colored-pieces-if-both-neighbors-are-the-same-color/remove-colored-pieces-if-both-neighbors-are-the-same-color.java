@@ -8,6 +8,6 @@ class Solution {
             if(arr[i]=='B' && arr[i]==arr[i-1] && arr[i]==arr[i+1])turnB++;
         }
 
-        return (turnA>turnB)?true:false;
+        return turnA>turnB;
     }
 }

@@ -13,22 +13,12 @@ class Solution {
         boolean isPossible = true;
         int result =0;
         for(int i=1;i<complexity.length;i++){
-            if(complexity[0]<complexity[i]){
-                isPossible = true;
-            }else{
-                isPossible=false;
+            if(complexity[0]>=complexity[i]){
+                return 0;
             }
-            if(!isPossible)break;
         }
 
-        if(isPossible){
-            
-            result = (int)factorial(complexity.length-1);
-        }else{
-            return 0;
-        }
-
-        return result ;
+        return (int)factorial(complexity.length-1);
 
     }
 }

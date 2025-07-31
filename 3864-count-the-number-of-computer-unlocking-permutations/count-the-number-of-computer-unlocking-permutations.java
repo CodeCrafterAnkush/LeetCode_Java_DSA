@@ -1,9 +1,10 @@
 class Solution {
     public long factorial(int n){
+        int mod = 1000000007;
         if(n == 0)return 1;
         long result = 1;
         for(int i=1;i<=n;i++){
-            result=(result*i)% (int)(Math.pow(10,9)+7);
+            result=(result*i)% mod;
         }
 
         return result;

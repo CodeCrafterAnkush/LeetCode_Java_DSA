@@ -9,11 +9,11 @@ class Solution {
                 map.put(nums[i],1);
             }
         }
-        // Integer[] arr = new Integer[nums.length];
-        // for(int i=0;i<nums.length;i++){
-        //     arr[i]=nums[i];
-        // }
-        Integer[] arr = Arrays.stream(nums).boxed().toArray(Integer[]::new);
+        Integer[] arr = new Integer[nums.length];
+        for(int i=0;i<nums.length;i++){
+            arr[i]=nums[i];
+        }
+        // Integer[] arr = Arrays.stream(nums).boxed().toArray(Integer[]::new);
         Arrays.sort(arr,(a,b)->{
             int freqOfA =map.get(a);
             int freqOfB=map.get(b);

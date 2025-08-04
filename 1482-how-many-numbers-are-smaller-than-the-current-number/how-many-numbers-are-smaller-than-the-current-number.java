@@ -1,10 +1,11 @@
 class Solution {
     public int[] smallerNumbersThanCurrent(int[] nums) {
         Map<Integer,Integer> map = new HashMap<>();
-        int arr[]= new int [nums.length];
-        for(int i=0;i<arr.length;i++){
-           arr[i]=nums[i];
-        }
+        // int arr[]= new int [nums.length];
+        // for(int i=0;i<arr.length;i++){
+        //    arr[i]=nums[i];
+        // }
+         int arr[]= nums.clone();
         Arrays.sort(arr);
         for(int i=0;i<arr.length;i++){
            if(!map.containsKey(arr[i])){

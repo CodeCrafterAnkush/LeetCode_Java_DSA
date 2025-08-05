@@ -17,11 +17,9 @@ class Solution {
         // }
 
         for(int i=0;i<fruits.length;i++){
-            boolean isPlaced = false;
             for(int j =0;j<baskets.length;j++){
                 if(baskets[j]!=0 && fruits[i]<= baskets[j]){
                     baskets[j] = 0;
-                    isPlaced =true;
                     count++;
                     break;
                 }

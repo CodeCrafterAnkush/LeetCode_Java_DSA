@@ -22,14 +22,15 @@ class Solution {
                 if(baskets[j]!=0 && fruits[i]<= baskets[j]){
                     baskets[j] = 0;
                     isPlaced =true;
+                    count++;
                     break;
                 }
             }
-            if(!isPlaced){
-                count++;
-            }
+            // if(!isPlaced){
+            //     count++;
+            // }
         }
 
-        return count;
+        return fruits.length-count;
     }
 }

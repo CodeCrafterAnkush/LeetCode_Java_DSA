@@ -4,9 +4,9 @@ class Solution {
         if(map.containsKey(n)) return map.get(n);
         int steps;
         if(n%2 ==0){
-            steps = 1+ countStep(n/2,map);
+            steps = 1 + countStep(n/2,map);
         }else{
-            steps = 1+Math.min(countStep(n+1,map),countStep(n-1,map));
+            steps = 1 + Math.min(countStep(n+1,map),countStep(n-1,map));
         } 
         map.put(n,steps);
         return steps;       

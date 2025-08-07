@@ -24,7 +24,6 @@ class Solution {
         return sum;
     }
     public int minSwaps(int[] nums) {
-        List<Pair> list = new ArrayList<>();
         Pair []arr = new Pair[nums.length];
         for(int i=0;i<arr.length;i++){
             int sum = digitSum(nums[i]);

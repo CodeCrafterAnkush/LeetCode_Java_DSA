@@ -14,22 +14,25 @@
  * }
  */
 class Solution {
-    public void printPath(TreeNode root,List<String> list,String str){
-        if(root.left == null && root.right == null){
-            list.add(str+root.val);
+    public void printPath(TreeNode root,List<String> list,StringBuilder sb){
+        if(root == null){
             return;
         }
-        if(root.left != null ){
-            printPath(root.left,list,str+root.val+"->");            
+        int len = sb.length();
+        sb.append(root.val);
+        if(root.left == null && root.right == null){
+            list.add(sb.toString());
+        }else{
+            sb.append("->");
+            printPath(root.left,list,sb);
+            printPath(root.right,list,sb);
         }
-        if(root.right != null){
-            printPath(root.right,list,str+root.val+"->");
-        }    
+        sb.setLength(len);        
     }
     public List<String> binaryTreePaths(TreeNode root) {
         List<String> list = new ArrayList<>();
-        String  str="";
-        printPath(root,list,str);
+        StringBuilder sb = new StringBuilder();
+        printPath(root,list,sb);
         return list;
     }
 }

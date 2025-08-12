@@ -2,7 +2,7 @@ class Solution {
     public int lowerBound(int arr[],int target,int n){
         int low =0;
         int high = n-1;
-        int ans = 0;
+        int ans = n;
         while(low<= high){
             int mid = low+(high-low)/2;
             if(arr[mid]>=target){
@@ -36,10 +36,7 @@ class Solution {
         if(nums[nums.length-1]<target)return posArr;
         int lb = lowerBound(nums,target,nums.length);
         int ub = upperBound(nums,target,nums.length)-1;
-        if(nums.length == 1 && target == nums[nums.length-1]){
-            posArr[0]=0;
-            posArr[1]=0;
-        }else if(lb< nums.length && ub >= 0 && nums[lb]==target && nums[ub]==target){
+        if(lb< nums.length && ub >= 0 && lb <= ub && nums[lb]==target && nums[ub]==target){
             posArr[0]=lb;
         posArr[1]=ub;
         }

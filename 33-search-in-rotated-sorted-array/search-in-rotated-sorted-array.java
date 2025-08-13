@@ -17,16 +17,16 @@ class Solution {
                 return mid;
             }
              //check if left part is sorted else right is sorted
-            if(nums[low] < nums[mid]){
+            if(nums[low] <= nums[mid]){
                 //if target is present in left part
-                if(target>=nums[low] && target <nums[mid]){
+                if(nums[low]<=target && target <=nums[mid]){
                     high = mid-1;
                 }else{
                     low=mid+1;
                 }
             }else{
                 //if target is present in right part
-                if(target > nums[mid] && target <=nums[high]){
+                if(nums[mid] <= target && target <= nums[high]){
                     low = mid+1;
                 }else{
                     high = mid-1;

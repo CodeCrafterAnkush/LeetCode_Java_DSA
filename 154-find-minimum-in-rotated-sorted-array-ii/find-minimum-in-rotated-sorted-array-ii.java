@@ -19,21 +19,6 @@ class Solution {
                 min=Math.min(min,nums[mid]);
                 high = mid-1;
             }
-            // if(nums[low]<=nums[high]){
-            //     min = Math.min(nums[low],min);
-            //     // break;
-            // }
-            // if(nums[high]<=nums[low]){
-            //     min = Math.min(nums[high],min);
-            //     if(nums[mid]<=nums[low]) low = mid+1;
-            // }
-            // if(nums[low]<nums[mid]){
-            //     min = Math.min(nums[low],min);
-            //     high = mid-1;
-            // }else{
-            //     min = Math.min(min,nums[mid]);
-            //     low = mid +1;
-            // }
         }
 
         return min;

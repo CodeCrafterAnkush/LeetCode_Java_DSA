@@ -6,7 +6,7 @@ class Solution {
         }
         if(n==1)return true;
         return false;
-
-        // return((n & (n-1))==0);      
+        // return(n & (n-1))==0 && (pow(n)%2)==0 ; 
+        // return ((n & (n-1))==0) && (Math.pow(4,n)%2 ==0);
     }
 }

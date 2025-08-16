@@ -13,19 +13,6 @@ class Solution {
                 prefixSum -= nums[minus];
                 minus++;
             }
-
-            // if(prefixSum < target ){
-            //     prefixSum += nums[plus];
-            //     plus++;
-            // }else if(prefixSum > target){
-            //     prefix-= nums[minus];
-            //     minus++;
-            // }else if(prefixSum == target){
-            //     int length = (plus-minus)+1;
-            //     min = Math.min(min,length)
-            //     plus++;
-            //     prefixSum += nums[plus];
-            // }
         }
         return (min==Integer.MAX_VALUE)?0:min;
     }

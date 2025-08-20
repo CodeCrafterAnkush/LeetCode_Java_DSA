@@ -8,6 +8,7 @@ class Solution {
             return;
         }
         for(int i=start;i<=9;i++){
+            if(sum +i > n)break;
             list.add(i);
             helper(k,n,sum+i,i+1,list);
             list.remove(list.size()-1);

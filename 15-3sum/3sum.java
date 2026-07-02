@@ -1,31 +1,39 @@
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
-        List<List<Integer>> ansList = new ArrayList<>();
+        // List<List<Integer>> mainList = new ArrayList<>();
+        HashSet<List<Integer>> hsList = new HashSet<>();
+        
+        // for(int i=0;i<nums.length;i++){
+        //     for(int j=i+1;j<nums.length;j++){
+        //         for(int k=j+1;k<nums.length;k++){
+        //             if(nums[i]+nums[j]+nums[k]==0){
+        //                 List<Integer> list = new ArrayList<>();
+        //                 list.add(nums[i]);
+        //                 list.add(nums[j]);
+        //                 list.add(nums[k]);
+        //                 Collections.sort(list);
+        //                 hsList.add(list);
+        //             }
+        //         }
+        //     }
+        // }
         Arrays.sort(nums);
-        for (int i = 0; i < nums.length; i++) {
-            if(i>0 && nums[i] == nums[i-1]) continue;// means naver go down direct go to increment i++.
-            int j = i + 1;
-            int k = nums.length - 1;
-            while(j < k) {
-                int sum = nums[i] + nums[j] + nums[k];
-                if (sum > 0){
-                    k--;
-                }else if (sum < 0){
-                    j++;
-                }else{
+        for(int i=0;i<nums.length;i++){
+            int start = i+1;
+            int end = nums.length-1;
+            while(start<end){
+                int sum = nums[i]+nums[start]+nums[end];
+                if(sum == 0){
                     List<Integer> list = new ArrayList<>();
-                    list.add(nums[i]);
-                    list.add(nums[j]);
-                    list.add(nums[k]);
-                    ansList.add(list);
-                    j++;
-                    k--;
-                    while (j < k && nums[j] == nums[j - 1]) j++;
-                    while (j < k && nums[k] == nums[k + 1]) k--;
-                }
+                        list.add(nums[i]);
+                        list.add(nums[start++]);
+                        list.add(nums[end--]);
+                        Collections.sort(list);
+                        hsList.add(list);
+                }else if(sum > 0)end--;
+                else if(sum < 0) start++;
             }
         }
-
-        return ansList;
+        return new ArrayList<>(hsList);
     }
 }

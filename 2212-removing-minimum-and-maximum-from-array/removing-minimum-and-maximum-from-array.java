@@ -6,10 +6,11 @@ class Solution {
             if(nums[i]>nums[maxIdx]) maxIdx =i;
             if(nums[i]<nums[minIdx]) minIdx =i;
         }
-
-        int deleteFromFront = Math.max(minIdx,maxIdx)+1;
-        int deleteFromBack = nums.length-Math.min(minIdx,maxIdx);
-        int deleteFromBoth = (Math.min(maxIdx,minIdx)+1)+(nums.length-Math.max(minIdx,maxIdx));
+        int left = Math.min(minIdx,maxIdx);
+        int right = Math.max(minIdx,maxIdx);
+        int deleteFromFront = right+1;
+        int deleteFromBack = nums.length-left;
+        int deleteFromBoth = (left+1)+(nums.length-right);
 
         return Math.min(deleteFromFront,(Math.min(deleteFromBack,deleteFromBoth)));
     }

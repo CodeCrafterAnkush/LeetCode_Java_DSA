@@ -6,8 +6,6 @@ class Solution {
             if(nums[i]>nums[maxIdx]) maxIdx =i;
             if(nums[i]<nums[minIdx]) minIdx =i;
         }
-        System.out.print(minIdx );
-        System.out.print(maxIdx );
 
         int deleteFromFront = Math.max(minIdx,maxIdx)+1;
         int deleteFromBack = nums.length-Math.min(minIdx,maxIdx);
